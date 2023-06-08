@@ -1,0 +1,74 @@
+<main id="home">
+  <span class="subheading">Bienvenido,</span>
+  <span id="userFirstName" class="subheading">Cazador</span>
+  <h1 class="title">Cual Pokemon deseas buscar hoy?</h1>
+
+  <div id="choosePokemon">
+    <div class="choose-pokemon__content1">
+      <form >
+        <input
+        name="pokemonEncontrado"
+        [(ngModel)]="nombreBuscar"
+        type="text"
+        class="form-control"
+        placeholder=""
+      />
+      <button type="submit" (click)="buscarPokemon(nombreBuscar)">
+        Buscar
+      </button>
+      </form>
+
+      <div *ngIf="pokemonEncontrado">
+        <div class="choose-pokemon__informations">
+          <div>
+            <h2 >{{ pokemonEncontrado.nombre}}</h2>
+            <h2 >{{ pokemonEncontrado.id}}</h2>
+           
+          </div>
+          <div class="choose-pokemon__details">
+            <span class="choose-pokemon__subtitle"
+              >Tipo:
+              <span class="choose-pokemon__types"></span>
+              <ol id="typesList" class="types-list"></ol>
+            </span>
+            <span class="choose-pokemon__subtitle"
+              >Habilidades:
+              <span class="choose-pokemon__abilities"></span>
+            </span>
+            <div class="choose-pokemon__dimensions">
+              <div class="content1">
+                <span class="choose-pokemon__hp"></span>
+                <span class="choose-pokemon__subtitle">HP</span>
+              </div>
+              <div class="content2">
+                <span class="choose-pokemon__weight"></span>
+                <span class="choose-pokemon__subtitle">Weight</span>
+              </div>
+              <div class="content3">
+                <span class="choose-pokemon__height"></span>
+                <span class="choose-pokemon__subtitle">Height</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="choose-pokemon__content2">
+      <div class="choose-pokemon__cover">
+        <img class="choose-pokemon__img" src="{{ pokemonEncontrado.imagen_frente1}}" alt="" />
+        <div class="choose-pokemon__buttons">
+          <button
+            id="buttonPrev"
+            title="Prev"
+            class="button-circular bi bi-caret-left-fill"
+          ></button>
+          <button
+            id="buttonNext"
+            title="Next"
+            class="button-circular bi bi-caret-right-fill"
+          ></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

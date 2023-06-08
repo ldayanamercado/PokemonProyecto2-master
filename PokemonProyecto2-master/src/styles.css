@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+:root {
+    --primary-color: #FFCB05;
+    --secondary-color: #3565AE;
+    --primary-background-color: #526D82;
+    --secondary-background-color: #DDE6ED;
+    --shadow-color: #121630;
+    --black: #080917;
+    --white: #FCFCFC;
+    --gray-100: #EAEAEA;
+    --gray-200: #DEE2E6;
+    --gray-300: #D1D5D8;
+    --gray-400: #8B8B8B;
+    --gray-500: #2D3037;
+    --gray-600: #212327;
+    
+    --normal: linear-gradient(to right, #636363, #a2ab58);
+    --grass: linear-gradient(to right, #11998e, #38ef7d);
+    --fire: linear-gradient(to right, #fe8c00, #f83600);
+    --water: linear-gradient(to left, #00d2ff, #3a7bd5);
+    --electric: linear-gradient(to right, #e6a900, #f9d423);
+    --ice: linear-gradient(to right, #9cecfb, #65c7f7, #418aff);
+    --ground:  linear-gradient(to right, #ee570c, #ddb955) ;
+    --flying: linear-gradient(to right, #427fe0, #8AACE4);
+    --poison: linear-gradient(to right, #6a3093, #a044ff);
+    --fighting: linear-gradient(to right, #e52d27, #b31217); 
+    --psychic: linear-gradient(to right, #7f00ff, #e100ff);
+    --dark: #725847;
+    --rock: #b8a137;
+    --bug: linear-gradient(to right, #3ca55c, #b5ac49);
+    --ghost: #6e5896;
+    --steel: linear-gradient(to right, #2D3037, #8B8B8B);
+    --dragon: linear-gradient(to right, #06589b, #006FCA);
+    --fairy: linear-gradient(to right, #e661d4, #f87de8);
+}
+body {
+    background: var(--primary-background-color);
+    color: var(--white);
+    font-family: 'Heebo', Arial, sans-serif;
+}
+
+/* MENU estilos */
+.menu__item {
+    width: 100%;
+    border-radius: 0.5rem;
+}
+
+.menu__item.active {
+    background: var(--primary-background-color);
+}
+
+.menu__icon, .menu__text{
+    color: var(--black) !important;
+}
+
+.menu__icon, .bi-record-circle {
+    font-size: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--white);
+    text-align: center;
+}
+
+.menu__item:hover .menu__icon,
+.menu__item.active .menu__icon {
+    color: var(--secondary-color) !important;
+}
+
+.menu__item:hover .menu__text, 
+.menu__item.active .menu__text {
+    color: var(--black) !important;
+}
+
+.bi-record-circle::after{
+    position: absolute;
+    content: '';
+    width: 1.35rem;
+    height: 0.14rem;
+    margin: 0.68rem 0 0 -1.4rem;
+    background: var(--gray-100);
+}
+
+.menu__item:hover .bi-record-circle::after, 
+.menu__item.active .bi-record-circle::after {
+    background: red !important;
+}
+
+.menu__text {
+    margin-top: 0.15rem;
+}
+
+/* BUTTONS STYLE */
+.button-circular {
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--white);
+    user-select: none;
+    padding: 0.5rem 0.5rem 0.4rem;
+    background-color: var(--secondary-background-color);
+    box-shadow: 0.05rem 0.05rem 0.2rem var(--primary-background-color);
+    border-radius: 1rem;
+}
+
+.button-circular:hover {
+    color: red;
+    box-shadow: inset 0.1rem 0.1rem 0.1rem var(--primary-background-color);
+}
+
+.button-horizontal span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    margin: 0 0.5rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-background-color) transparent;
+}
+
+body {
+    background: var(--primary-background-color);
+    color: var(--white);
+    font-family: 'Heebo', Arial, sans-serif;
+}
+
+::selection {
+    background-color: var(--primary-color);
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+a:hover {
+    color: var(--primary-color) !important;
+}
+
+.title-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 0.1rem solid var(--secondary-background-color);
+    margin: 1rem 0;
+}
+
+.title {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    margin: 0;
+}
+
+/* SCROLLBAR STYLE */
+::-webkit-scrollbar {
+    width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary-background-color);
+    border-radius: 50rem;
+}
+
+button {
+    background: transparent;
+    border: none;
+}
+
+/* SCROLLBAR STYLE END */
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+} 
+
+.header__brand .logo {
+    width: 100%;
+    height: 4.5rem;
+    padding: 0.5rem;
+    pointer-events: none;
+}
+
+/* BUTTONS STYLE END */
+
+#favorites {
+    padding: 1.5rem 3rem 0 2.5rem;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem 0;
+    width: 100%;
+    color: var(--gray-400);
+}
+
+footer a {
+    color: var(--gray-400);
+}
+
+.footerbar {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 3.5rem;
+    background: var(--secondary-background-color);
+    margin: 0;
+    z-index: 3;
+}
+
+.footerbar .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.footerbar .menu__item {
+    width: 25vw;
+    border-radius: 0;
+    background: transparent;
+}
+
+.footerbar .menu__item .menu__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    height: 100%;
+}
+
+.footerbar .menu__link .menu__icon.active {
+    transform: scale(1.5);
+    transition: 0.4s;
+}
+
+.footerbar .menu__link .menu__text{
+    display: none;
+}
+
+#buttonUp {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1rem 1rem 1.25rem;
+    cursor: pointer;
+}
+
+/* Breakpoints */
+@media screen and (max-width: 576px) {
+    main {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        margin-bottom: 4rem;
+    }
+
+    .bi-heart-fill:hover {
+        -webkit-text-stroke-color: var(--white);
+    }
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        margin-left: 18rem;
+    } 
+
+    header {
+        position: absolute;
+    }
+
+    header img, .footerbar {
+        display: none;
+    }  
+}
