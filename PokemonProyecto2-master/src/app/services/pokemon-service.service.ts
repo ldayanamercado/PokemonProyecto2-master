@@ -11,7 +11,7 @@ import { of } from 'rxjs';
   providedIn: 'root'
 })
 export class PokemonServiceService {
-  API_URL='http://localhost:4001/api/pokemon/';
+  API_URL='http://localhost:4001/api/pokemon/habilidades/';
 
 
   constructor( private http:HttpClient) { }
@@ -35,16 +35,29 @@ export class PokemonServiceService {
       })
       );
   }
-
-  getPokemonobtenerId(id:number): Observable <Pokemon>{
-    return this.http.get<Pokemon>(this.API_URL+id).pipe(
-      tap(_ => console.log('Dato Encontrado')),
+  getPokemonobtenerTipo(tipo:string): Observable <Pokemon>{
+    return this.http.get<Pokemon>(this.API_URL+'tipo/'+tipo).pipe(
+      tap(_ => console.log('Nombre del Pokemon Encontrado')),
       catchError(error =>{
         console.log("error al buscar")
         return of(error as Pokemon)
       })
       );
   }
+  getPokemonobtenerHabilidad(habilidad:string): Observable <Pokemon>{
+    return this.http.get<Pokemon>(this.API_URL+'habilidad/'+habilidad).pipe(
+      tap(_ => console.log('Nombre del Pokemon Encontrado')),
+      catchError(error =>{
+        console.log("error al buscar")
+        return of(error as Pokemon)
+      })
+      );
+      
+  }
+
+
+
+  
 
 
 

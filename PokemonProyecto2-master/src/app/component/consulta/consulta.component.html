@@ -8,11 +8,13 @@
 
     <span id="pokedexListLength">{{ ListaPokemon.length }}</span>
   </div>
+  <br>
+  <br>
 
   <div class="card-container" id="cardContainer">
     <div class="card" *ngFor="let item of ListaPokemon">
       <div class="imgBx">
-        <img src="{{ item.imagen_frente1 }}" alt="pokemon" />
+        <img src="{{ item.imagen_png1}}" alt="pokemon" />
       </div>
       <div class="content">
         <div class="details">
@@ -21,6 +23,7 @@
               >Habilidades: {{ item.habilidades_nombre }}
             </span>
           </h2>
+          
 
           <div class="data">
             <h3>

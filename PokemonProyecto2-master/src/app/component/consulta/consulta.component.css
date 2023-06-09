@@ -99,13 +99,13 @@
     justify-content: baseline;
     align-items: center;
     gap: 0.5rem;
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 .pokemons-length img {
     pointer-events: none;
     user-select: none;
-    height: 2.55rem;
+    height: 2rem;
 }
 
 /* POKÉMON LIST STYLE */

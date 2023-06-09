@@ -57,13 +57,13 @@ body {
     font-size: 1.5rem;
     width: 1.5rem;
     height: 1.5rem;
-    color: var(--white);
+    
     text-align: center;
 }
 
 .menu__item:hover .menu__icon,
 .menu__item.active .menu__icon {
-    color: var(--secondary-color) !important;
+    color: var(--primary-color) !important;
 }
 
 .menu__item:hover .menu__text, 
@@ -300,4 +300,7 @@ footer a {
     header img, .footerbar {
         display: none;
     }  
+}
+.container{
+    padding-top: 1rem;
 }

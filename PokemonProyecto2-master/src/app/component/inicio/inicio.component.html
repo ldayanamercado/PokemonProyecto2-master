@@ -1,61 +1,173 @@
-<main id="home">
+<div class="container">
   <span class="subheading">Bienvenido,</span>
   <span id="userFirstName" class="subheading">Cazador</span>
   <h1 class="title">Cual Pokemon deseas buscar hoy?</h1>
-
-  <div id="choosePokemon">
-    <div class="choose-pokemon__content1">
-      <form >
+  <form>
+    <div class="row">
+      <!-- input buscar  -->
+      <div class="col-md-7">
         <input
-        name="pokemonEncontrado"
-        [(ngModel)]="nombreBuscar"
-        type="text"
-        class="form-control"
-        placeholder=""
-      />
-      <button type="submit" (click)="buscarPokemon(nombreBuscar)">
-        Buscar
-      </button>
-      </form>
-
-      <div *ngIf="pokemonEncontrado">
-        <div class="choose-pokemon__informations">
-          <div>
-            <h2 >{{ pokemonEncontrado.nombre}}</h2>
-            <h2 >{{ pokemonEncontrado.id}}</h2>
-           
-          </div>
-          <div class="choose-pokemon__details">
-            <span class="choose-pokemon__subtitle"
-              >Tipo:
-              <span class="choose-pokemon__types"></span>
-              <ol id="typesList" class="types-list"></ol>
-            </span>
-            <span class="choose-pokemon__subtitle"
-              >Habilidades:
-              <span class="choose-pokemon__abilities"></span>
-            </span>
-            <div class="choose-pokemon__dimensions">
-              <div class="content1">
-                <span class="choose-pokemon__hp"></span>
-                <span class="choose-pokemon__subtitle">HP</span>
-              </div>
-              <div class="content2">
-                <span class="choose-pokemon__weight"></span>
-                <span class="choose-pokemon__subtitle">Weight</span>
-              </div>
-              <div class="content3">
-                <span class="choose-pokemon__height"></span>
-                <span class="choose-pokemon__subtitle">Height</span>
-              </div>
-            </div>
-          </div>
-        </div>
+          name="pokemonEncontrado"
+          [(ngModel)]="nombreBuscar"
+          type="text"
+          class="form-control"
+          placeholder=""
+        />
+      </div>
+      <!-- boton buscar  -->
+      <div class="col-md-3">
+        <button
+          type="submit"
+          class="btn btn-base"
+          (click)="buscarPokemon(nombreBuscar)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="feather feather-search"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </div>
     </div>
-    <div class="choose-pokemon__content2">
+    <!-- Fin form buscar -->
+  </form>
+
+  <div class="row">
+    <!-- datos pokemon -->
+    <div class="col-md-7">
+      <div class="row">
+        <h2>{{ pokemonEncontrado.nombre }}</h2>
+
+      </div>
+      <span class="altura">Altura: <span class="numero">{{ pokemonEncontrado.altura }}</span></span>
+      <span class="anchura">Anchura: <span class="numero">{{ pokemonEncontrado.anchura }}</span></span>
+     
+      <h2 class="habilidades">Habilidades</h2>
+      <ul class="goal-progress">
+        <li>
+          <div class="details">
+            <div class="title">
+              <h2>hr</h2>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-success"
+                role="progressbar"
+                [style.width.%]="pokemonEncontrado.estatisticas[0]"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <p>Nivel:{{ pokemonEncontrado.estatisticas[0] }}%</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="details">
+            <div class="title">
+              <h2>Ataque</h2>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-info"
+                role="progressbar"
+                [style.width.%]="pokemonEncontrado.estatisticas[1]"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <p>Nivel:{{ pokemonEncontrado.estatisticas[1] }}%</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="details">
+            <div class="title">
+              <h2>Defensa</h2>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-danger"
+                role="progressbar"
+                [style.width.%]="pokemonEncontrado.estatisticas[2]"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <p>Nivel:{{ pokemonEncontrado.estatisticas[2] }}%</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="details">
+            <div class="title">
+              <h2>Ataque Especial</h2>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar bg-warning"
+                role="progressbar"
+                [style.width.%]="pokemonEncontrado.estatisticas[3]"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <p>Nivel:{{ pokemonEncontrado.estatisticas[3] }}%</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="details">
+            <div class="title">
+              <h2>Defensa Especial</h2>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar  bg-info"
+                role="progressbar"
+                [style.width.%]="pokemonEncontrado.estatisticas[4]"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <p>Nivel:{{ pokemonEncontrado.estatisticas[4] }}%</p>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="details">
+            <div class="title">
+              <h2>Velocidad</h2>
+            </div>
+            <div class="progress">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                [style.width.%]="pokemonEncontrado.estatisticas[5]"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></div>
+              <p>Nivel:{{ pokemonEncontrado.estatisticas[5] }}%</p>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+    
+    </div>
+    <!-- Imagen -->
+    <div class="choose-pokemon__content2 col-md-5">
       <div class="choose-pokemon__cover">
-        <img class="choose-pokemon__img" src="{{ pokemonEncontrado.imagen_frente1}}" alt="" />
+        <img
+          class="choose-pokemon__img"
+          src="{{ pokemonEncontrado.imagen_png1 }}"
+          alt=""
+        />
         <div class="choose-pokemon__buttons">
           <button
             id="buttonPrev"
@@ -71,4 +183,4 @@
       </div>
     </div>
   </div>
-</main>
+</div>
