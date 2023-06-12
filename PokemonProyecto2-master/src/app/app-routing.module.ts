@@ -7,7 +7,8 @@ import {ConsultaComponent} from './component/consulta/consulta.component';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: 'NavComponent',pathMatch :'full'},
+  
+  {path: '', redirectTo: 'InicioComponent',pathMatch :'full'},
   {path: 'InicioComponent', component: InicioComponent},
   {path: 'ConsultaComponent', component: ConsultaComponent},
 

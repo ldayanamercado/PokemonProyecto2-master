@@ -144,3 +144,40 @@ ul.goal-progress {
     font-weight: bold;
   }
   
+  .disabled-button {
+    display: inline-block;
+    border: none;
+    border-radius: 8%;
+    padding: 10px 20px;
+    background-color: #FFD2D2;
+    color: #888;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: not-allowed;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg);
+    transition: all 0.3s ease;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin: 0 5 0 5;
+  }
+  .disabled-button:hover {
+    background-color: #ccc;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .disabled-button:active {
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg);
+  }
+  
+  .namePokemon h2{
+    font-family: monospace !important;
+    font-weight: bold !important;
+    text-align: center !important;
+    justify-content: center;
+    
+    
+
+
+  }

@@ -44,15 +44,19 @@
 
   <div class="row">
     <!-- datos pokemon -->
-    <div class="col-md-7">
-      <div class="row">
-        <h2>{{ pokemonEncontrado.nombre }}</h2>
-
+    <div class="col-md-7 text-center">
+      <div class=" namePokemon ">
+        <h2 class="text-center" >{{    pokemonEncontrado.nombre }}</h2>
       </div>
-      <span class="altura">Altura: <span class="numero">{{ pokemonEncontrado.altura }}</span></span>
-      <span class="anchura">Anchura: <span class="numero">{{ pokemonEncontrado.anchura }}</span></span>
-     
-      <h2 class="habilidades">Habilidades</h2>
+      <span class="altura"
+        >Altura:
+        <span class="numero">{{ pokemonEncontrado.altura }}</span></span
+      >
+      <span class="anchura"
+        >Anchura:
+        <span class="numero">{{ pokemonEncontrado.anchura }}</span></span
+      >
+
       <ul class="goal-progress">
         <li>
           <div class="details">
@@ -129,7 +133,7 @@
             </div>
             <div class="progress">
               <div
-                class="progress-bar  bg-info"
+                class="progress-bar bg-info"
                 role="progressbar"
                 [style.width.%]="pokemonEncontrado.estatisticas[4]"
                 aria-valuemin="0"
@@ -157,28 +161,32 @@
           </div>
         </li>
       </ul>
-
-    
     </div>
     <!-- Imagen -->
     <div class="choose-pokemon__content2 col-md-5">
       <div class="choose-pokemon__cover">
-        <img
-          class="choose-pokemon__img"
-          src="{{ pokemonEncontrado.imagen_png1 }}"
-          alt=""
-        />
+        <img class="choose-pokemon__img" [src]="imagenActual" alt="" alt="" />
         <div class="choose-pokemon__buttons">
           <button
             id="buttonPrev"
             title="Prev"
-            class="button-circular bi bi-caret-left-fill"
+            class="button-circular bi bi-caret-left-fill btn btn-dark"
+            (click)="cambiarImagenAnterior()"
           ></button>
           <button
             id="buttonNext"
             title="Next"
-            class="button-circular bi bi-caret-right-fill"
+            class="button-circular bi bi-caret-right-fill btn btn-dark"
+            (click)="cambiarImagenSiguiente()"
           ></button>
+          <button
+            *ngIf="imagenActual !== imagenOriginal"
+            id="buttonRestore"
+            title="Restore"
+            class="button-restore"
+            (click)="restaurarImagenOriginal()"
+          > <span class="bi bi-arrow-counterclockwise btn btn-dark"></span>
+        </button>
         </div>
       </div>
     </div>

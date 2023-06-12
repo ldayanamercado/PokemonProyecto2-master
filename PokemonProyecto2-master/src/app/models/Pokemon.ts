@@ -5,6 +5,7 @@ export class Pokemon{
     anchura: number; 
     habilidades_nombre :string[];
     imagen_svg: string;
+    
     imagen_png1:string;
     imagen_minipng2:string;
     imagen_minipng3:string;
