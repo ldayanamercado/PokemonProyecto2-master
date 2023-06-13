@@ -20,6 +20,7 @@ export class ConsultaComponent {
   }
   ngOnInit(): void{
     this.obtenerPokemon(); 
+    this. buscarPokemon(this.pokemonSeleccionado);
   }
 
  
@@ -67,6 +68,11 @@ export class ConsultaComponent {
     this.pokemonSeleccionado = pokemonEncontrado
     console.log(this.pokemonSeleccionado);
 
+  }
+
+  getRandomColor() {
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    return randomColor;
   }
   
 }

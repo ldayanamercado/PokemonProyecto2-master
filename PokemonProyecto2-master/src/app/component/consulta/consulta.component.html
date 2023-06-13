@@ -20,13 +20,13 @@
     <div class="content">
       <div class="details">
         <h2>
-          {{ item.nombre }} <br />
+          {{item.nombre}} <br />
         </h2>
         
 
         <div class="data">
           <h3>
-            Altura<br /><span>{{ item.altura }}</span>
+            Altura<br /><span>{{item.altura}}</span>
           </h3>
           <h3>
             Ancho<br /><span>{{ item.anchura }}</span>
@@ -199,8 +199,8 @@
             
             <div class="row tipos">
              
-              <h2>{{ pokemonSeleccionado.tipos_nombre[0]}}</h2>
-              <h2>{{ pokemonSeleccionado.tipos_nombre[1]}}</h2>
+              <h2 class="random-color rounded"  [style.backgroundColor]="getRandomColor()" >{{ pokemonSeleccionado.tipos_nombre[0]}}</h2>
+              <h2 class="random-color rounded"  [style.backgroundColor]="getRandomColor()" >{{ pokemonSeleccionado.tipos_nombre[1]}}</h2>
 
             </div>
 

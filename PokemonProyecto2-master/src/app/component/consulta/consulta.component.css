@@ -507,7 +507,21 @@ padding: 0;
     color: #ff5f95;
     font-size: 3.5rem;
   }
-  .tipos h2{
-    
-
+  .row.tipos {
+    display: flex;
+    justify-content: space-between;
+  }
+  .row.tipos {
+    font-size: 2rem;
+  }
+  .random-color {
+    color: black;
+    padding: 10px 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .rounded {
+    border-radius: 20px;
+    margin-right: 10px;
   }
