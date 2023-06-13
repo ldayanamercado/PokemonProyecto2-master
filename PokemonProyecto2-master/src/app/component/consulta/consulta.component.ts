@@ -11,6 +11,7 @@ import { PokemonServiceService } from 'src/app/services/pokemon-service.service'
 export class ConsultaComponent {
   ListaPokemon:Pokemon[]=[];
   pokemonEncontrado: Pokemon | null = null;
+  pokemonSeleccionado: any = null;
 
 
   constructor(private _PokemonService:PokemonServiceService){
@@ -20,14 +21,38 @@ export class ConsultaComponent {
   ngOnInit(): void{
     this.obtenerPokemon(); 
   }
-  obtenerPokemon(){
-    this._PokemonService.getPokemon().subscribe(data=>{
-      console.log(data); 
-      this.ListaPokemon = data; 
-    }, error=>{
-      console.log(error); 
-    })
+
+ 
+
+  obtenerPokemon() {
+    this._PokemonService.getPokemon().subscribe(
+      (data: Pokemon[]) => {
+        console.log(data);
+        this.ListaPokemon = this.ordenarPorSeleccion(data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
+  
+  ordenarPorSeleccion(data: Pokemon[]) {
+    for (let i = 0; i < data.length - 1; i++) {
+      let minIndex = i;
+      for (let j = i + 1; j < data.length; j++) {
+        const idA = data[j].id;
+        const idMin = data[minIndex].id;
+        if (idA < idMin) {
+          minIndex = j;
+        }
+      }
+      if (minIndex !== i) {
+        [data[i], data[minIndex]] = [data[minIndex], data[i]];
+      }
+    }
+    return data;
+  }
+
   buscarPokemon(nombre: string) {
     this._PokemonService.getPokemonobtenerNombre(nombre).subscribe(data => {
       console.log(data);
@@ -36,6 +61,12 @@ export class ConsultaComponent {
       console.log(error);
       console.log("No se encontró ningún Pokémon con el nombre especificado.");
     });
+  }
+  verpokemon(pokemonEncontrado: any){
+    console.log("Modal sI");
+    this.pokemonSeleccionado = pokemonEncontrado
+    console.log(this.pokemonSeleccionado);
+
   }
   
 }

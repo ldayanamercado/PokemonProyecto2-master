@@ -35,10 +35,10 @@
 
         <div
           class="actionBtn"
-          data-toggle="modal"
-          data-target="#ModalPokemon"
+         
         >
-          <button>Info</button>
+          <button (click)="verpokemon(item)" data-toggle="modal"
+          data-target="#ModalPokemon">Info</button>
         </div>
       </div>
     </div>
@@ -61,7 +61,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Pokemon.</h5>
+        <h5 class="modal-title" id="exampleModalLabel">{{pokemonSeleccionado.nombre}}</h5>
         <button
           type="button"
           class="close"
@@ -75,28 +75,135 @@
         <div class="row">
           <!-- <div class="col-8 col-sm-6">Level 2: .col-8 .col-sm-6</div>
           <div class="col-4 col-sm-6">Level 2: .col-4 .col-sm-6</div> -->
-          <main class="container main-pokemon">
-            <div class="header-main-pokemon">
-              <span class="number-pokemon">#1</span>
+          <main class="container row">
+            <div class="col-md-5 imgPokemonT">
+              <h2>#{{pokemonSeleccionado.id}}</h2>
               <div class="container-img-pokemon">
                 <img
-                  src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png"
-                  alt="pokemon bulbasaur"
+                  src="{{pokemonSeleccionado.imagen_png1}}"
+                 
                 />
               </div>
 
             </div>
 
-            <div class="container-stats">
-              <h1>Estadísticas</h1>
-              <div class="stats">
-                <div class="stat-group">
-                  <span>Hp</span>
-                  <div class="progress-bar"></div>
-                  <span class="counter-stat">45</span>
-                </div>
+            <div class="col-md-6 modalText">
+              <div class="row">
+            <h2>Estadísticas</h2>
+             <!--  Estadísticas-->
+              <ul class="goal-progress ">
+                <li>
+                  <div class="details">
+                    <div class="title">
+                      <h2>hr: <span>{{ pokemonSeleccionado.estatisticas[0]}}</span>%</h2>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar "
+                        role="progressbar"
+                        [style.width.%]="pokemonSeleccionado.estatisticas[0]"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                    
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <div class="title">
+                      <h2>Ataque: <span>{{ pokemonSeleccionado.estatisticas[1] }}</span>%</h2>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-info"
+                        role="progressbar"
+                        [style.width.%]="pokemonSeleccionado.estatisticas[1]"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                   
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <div class="title">
+                      <h2>Defensa: <span>{{ pokemonSeleccionado.estatisticas[2] }}</span>% </h2>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-danger"
+                        role="progressbar"
+                        [style.width.%]="pokemonSeleccionado.estatisticas[2]"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <div class="title">
+                      <h2>Ataque++: <span>{{ pokemonSeleccionado.estatisticas[3]}}</span>%</h2>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-warning"
+                        role="progressbar"
+                        [style.width.%]="pokemonSeleccionado.estatisticas[3]"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                   
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <div class="title">
+                      <h2>Defensa++ : <span>{{ pokemonSeleccionado.estatisticas[4] }}</span>%</h2>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar bg-info"
+                        role="progressbar"
+                        [style.width.%]="pokemonSeleccionado.estatisticas[4]"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                     
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="details">
+                    <div class="title">
+                      <h2>Velocidad: <span>{{ pokemonSeleccionado.estatisticas[5] }}</span>%</h2>
+                    </div>
+                    <div class="progress">
+                      <div
+                        class="progress-bar"
+                        role="progressbar"
+                        [style.width.%]="pokemonSeleccionado.estatisticas[5]"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                      ></div>
+                      
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="row tipos">
+             
+              <h2>{{ pokemonSeleccionado.tipos_nombre[0]}}</h2>
+              <h2>{{ pokemonSeleccionado.tipos_nombre[1]}}</h2>
 
-              </div>
+            </div>
+
             </div>
           </main>
         </div>
