@@ -12,6 +12,8 @@ export class ConsultaComponent {
   ListaPokemon:Pokemon[]=[];
   pokemonEncontrado: Pokemon | null = null;
   pokemonSeleccionado: any = null;
+ 
+
 
 
   constructor(private _PokemonService:PokemonServiceService){
@@ -20,7 +22,6 @@ export class ConsultaComponent {
   }
   ngOnInit(): void{
     this.obtenerPokemon(); 
-    this. buscarPokemon(this.pokemonSeleccionado);
   }
 
  
@@ -70,9 +71,14 @@ export class ConsultaComponent {
 
   }
 
-  getRandomColor() {
+    getRandomColor() {
     const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
     return randomColor;
   }
   
+
 }
+  
+
+
+  

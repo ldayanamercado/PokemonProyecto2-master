@@ -1,3 +1,4 @@
+
 <section id="pokedex">
   <div class="title-container">
     <h2 class="title">Pokédex</h2>
@@ -6,13 +7,15 @@
   <div class="pokemons-length">
     <img src="../../../assets/img/pokeball.png" alt="Pokeball" />
 
-    <span id="pokedexListLength">{{ ListaPokemon.length }}</span>
+    <span id="pokedexListLength">Total De Pokemons {{ ListaPokemon.length }}</span>
   </div>
   <br>
   <br>
+ 
+  
 <!-- inicia card -->
 
-<div class="card-container" id="cardContainer">
+<div  class="card-container" id="cardContainer"  >
   <div class="card" *ngFor="let item of ListaPokemon">
     <div class="imgBx">
       <img src="{{ item.imagen_png1}}" alt="pokemon" />

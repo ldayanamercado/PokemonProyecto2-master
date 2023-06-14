@@ -12,6 +12,8 @@ export class Pokemon{
     tipos_nombre : string[];
     estatisticas: number[];
 
+    
+
     constructor(
         id: number, 
         nombre: string,
